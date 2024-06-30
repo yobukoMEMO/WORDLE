@@ -4,7 +4,7 @@ let CANTLETRAS = 5
 ERROR = document.getElementById('error')
 let palabraSecreta = ""
 function obtenerPalabraAleatoria(){
-    fetch('https://random-word.ryanrk.com/api/en/word/random/?length=5')
+    fetch("https://random-word-api.herokuapp.com/word?length=5&&lang=es")
     .then(response => response.json())
     .then(data => {
         palabraSecreta = data[0].toUpperCase()
