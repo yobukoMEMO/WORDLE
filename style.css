@@ -1,10 +1,19 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #0d1117;
+    background-image: url(diseno-abstracto-fondo-oscuro_54768-380.avif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; 
+  margin: 0; 
+  padding: 0;
   }
      
   h1 {
     text-align: center;
     margin-top: 50px;
+    color: #ffcc00;
   }
      
   #guess-input {
@@ -42,6 +51,8 @@ body {
      
   .row{
       margin-bottom: 10px;
+      text-align: center;
+      
   }
      
   .input-area{

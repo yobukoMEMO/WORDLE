@@ -1,7 +1,22 @@
 //programa
 let intentos = 6
-let diccionario = ["APPLE", "HURLS", "WINGS", "YOUTH"]
-let palabraSecreta = diccionario [Math.floor(Math.random() * diccionario.length)]
+let palabraSecreta = ""
+function obtenerPalabraAleatoria(){
+    fetch('https://random-word.ryanrk.com/api/en/word/random/?length=5')
+    .then(response => response.json())
+    .then(data => {
+        palabraSecreta = data[0].toUpperCase()
+        console.log('Palabra secreta:', palabraSecreta)
+        iniciarJuego()
+    })
+ .catch( error => {
+        console.log("error al obneter palabra aleatoria", error)
+    })
+}
+function iniciarJuego(){
+    console.log("el juego iniciado con la palabraSecreta:", palabraSecreta)
+}
+obtenerPalabraAleatoria()
 let button =document.getElementById("guess-button");
 let input = document.getElementById("guess-input")
 let grid = document.getElementById("grid")
