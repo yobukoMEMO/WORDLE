@@ -24,7 +24,7 @@ button.addEventListener("click",intentar)
 function intentar(){
    let intento = input.value.toUpperCase()
    if (intento ==palabraSecreta){
-    terminar("<h1>GANASTE! :) </h1>")
+    terminar("<h1>GANASTE! :D </h1>")
     return
     let grid = document.getElementById("grid")
     let row = document.createElement("div")
