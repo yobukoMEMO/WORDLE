@@ -1,5 +1,7 @@
 //programa
 let intentos = 6
+let CANTLETRAS = 5
+ERROR = document.getElementById('error')
 let palabraSecreta = ""
 function obtenerPalabraAleatoria(){
     fetch('https://random-word.ryanrk.com/api/en/word/random/?length=5')
@@ -23,8 +25,14 @@ let grid = document.getElementById("grid")
 button.addEventListener("click",intentar)
 function intentar(){
    let intento = input.value.toUpperCase()
+   if ((tamañoControl(intento))) {
+    ERROR.style.display = 'none'
+}
+else {
+    ERROR.style.display = 'block'
+}
    if (intento ==palabraSecreta){
-    terminar("<h1>GANASTE! :D </h1>")
+    terminar("<h1>GANASTE! 😎 </h1>")
     return
     let grid = document.getElementById("grid")
     let row = document.createElement("div")
@@ -51,8 +59,20 @@ for(let i in palabraSecreta){
 grid.appendChild(row)
 intentos--
 if( intentos == 0){
-    terminar("<h1>PERDISTE! :( </h1>")
+    terminar("<h1>PERDISTE! 😪 </h1>")
 }
+}
+function tamañoControl(intento) {
+    let cantLetras = 0;
+    for (let i in intento) {
+        cantLetras += 1;
+    }
+
+    if (cantLetras == CANTLETRAS) {
+        return true
+    } else {
+        return false
+    }
 }
 function terminar(mensaje){
     input.disabled = true

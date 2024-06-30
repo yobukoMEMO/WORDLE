@@ -58,4 +58,13 @@ body {
   .input-area{
       margin: 30px;
   }
+  #error{
+
+    display: none;
+    margin:40px auto;
+    position: relative;
+    font-size: x-large;
+    color: #ffcc00;
+    text-align: center;
+}
   
